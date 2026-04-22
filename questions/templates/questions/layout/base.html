@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to CrowdHelp</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="icon" href="{% static 'img/favicon.png' %}"  type="image/png">
+
+</head>
+
+<body>
+    <header class="p-3 border-bottom bg-white">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-between">
+                <a href="{% url 'index' %}" class="fs-2 fw-bold text-dark text-decoration-none">CrowdHelp</a>
+
+                <form class="col-12 col-lg-5 mb-3 mb-lg-0 me-lg-3 d-flex border rounded p-1">
+                    <input type="search" class="form-control border-0 shadow-none" placeholder="Search">
+                    <button type="button" class="btn btn-outline-success fw-bold me-3">ASK!</button>
+                </form>
+
+                <div class="d-flex align-items-center">
+                    <div class="small">
+                        <a href="{% url 'core:login' %}" class="text-decoration-none me-2 text-primary">log in</a>
+                        <a href="{% url 'core:signup' %}" class="text-decoration-none text-primary">register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mt-4">
+        <div class="row">
+            <div class="col-lg-9">
+                {% block content %}
+                {% endblock %}
+
+            </div>
+
+            <aside class="col-lg-3 ps-lg-5">
+                <div class="sidebar-section mb-5">
+                    <h3>Popular Tags</h3>
+                    <div class="d-flex flex-wrap gap-2 fw-bold">
+                        <a href="{% url 'tag' 'perl' %}" class="tag-perl">perl</a>
+                        <a href="{% url 'tag' 'python' %}" class="tag-python">python</a>
+                        <a href="{% url 'tag' 'TechnoPark' %}" class="text-secondary">TechnoPark</a>
+                        <a href="{% url 'tag' 'MySQL' %}" class="text-danger">MySQL</a>
+                        <a href="{% url 'tag' 'django' %}" class="tag-django">django</a>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Best Members</h3>
+                    <ul class="list-unstyled lh-lg">
+                        <li><a href="#" class="text-decoration-none">Mr. Freeman</a></li>
+                        <li><a href="#" class="text-decoration-none text-primary">Dr. House</a></li>
+                        <li><a href="#" class="text-decoration-none">Bender</a></li>
+                        <li><a href="#" class="text-decoration-none">Queen Victoria</a></li>
+                        <li><a href="#" class="text-decoration-none">V. Pupkin</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="py-1 bg-light border-top mt-5">
+        <div class="container text-center text-muted">
+            Footer:)
+        </div>
+    </footer>
+
+</body>
+</html>
