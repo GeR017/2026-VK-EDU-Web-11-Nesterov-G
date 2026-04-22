@@ -1,0 +1,25 @@
+<div class="question-card">
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-auto text-center" style="min-width: 100px;">
+                            <div class="avatar-placeholder mb-2">Avatar</div>
+                            <div class="vote-widget">
+                                <button class="vote-btn">▲</button>
+                                <span class="vote-count">5</span>
+                                <button class="vote-btn">▼</button>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm">
+                            <h3 class="h4">
+                                <a href="{% url 'question' question.id %}" class="text-decoration-none text-primary fw-bold">{{ question.title }}</a>
+                            </h3>
+                            <p class="text-secondary">
+                                {{ question.text }}
+                            </p>
+                            <div class="d-flex flex-wrap gap-3 small mt-3 align-items-center">
+                                <a href="{% url 'question' question.id %}" class="fw-bold">answers (3)</a>
+                                <span>Tags: <a href="#" class="text-decoration-none text-info me-1">moon</a> <a href="#"
+                                        class="text-decoration-none text-info">bender</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
