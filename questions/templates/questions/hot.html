@@ -1,0 +1,14 @@
+{% extends 'questions/layout/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex align-items-baseline mb-4">
+    <h2 class="me-3 fw-bold">Hot Questions</h2>
+    <a href="{% url 'index' %}" class="text-decoration-none h5">New Questions</a>
+</div>
+{% for question in questions %}
+{% include 'questions/partials/question.html' %}
+{% endfor %}
+{% include 'questions/partials/pagination.html' %}
+{% endblock %}
+
