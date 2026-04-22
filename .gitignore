@@ -1,4 +1,24 @@
-# OS файлы
+#virtual env
+venv/
+.venv/
+
+
+#virt cars
+.env
+
+
+#Django
+db.sqlite3
+*.sqlite3
+media/
+static/
+
+#Python
+*.pyc
+__pycache__/
+
+
+# OS files
 .DS_Store
 Thumbs.db
 
