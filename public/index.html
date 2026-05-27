@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to CrowdHelp</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="icon" href="static/img/favicon.png" type="image/png">
+    
+</head>
+
+<body>
+
+    <header class="p-3 border-bottom bg-white">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-between">
+                <a href="index.html" class="fs-2 fw-bold text-dark text-decoration-none">CrowdHelp</a>
+
+                <form class="col-12 col-lg-5 mb-3 mb-lg-0 me-lg-3 d-flex border rounded p-1">
+                    <input type="search" class="form-control border-0 shadow-none" placeholder="Search">
+                    <button type="button" class="btn btn-outline-success fw-bold me-3">ASK!</button>
+                </form>
+
+                <div class="d-flex align-items-center">
+                    <div class="small">
+                        <a href="login.html" class="text-decoration-none me-2 text-primary">log in</a>
+                        <a href="signup.html" class="text-decoration-none text-primary">register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mt-4">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="d-flex align-items-baseline mb-4">
+                    <h2 class="me-3 fw-bold">New Questions</h2>
+                    <a href="#" class="text-decoration-none h5">Hot Questions</a>
+                </div>
+
+                <div class="question-card">
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-auto text-center" style="min-width: 100px;">
+                            <div class="avatar-placeholder mb-2">Avatar</div>
+                            <div class="vote-widget">
+                                <button class="vote-btn">▲</button>
+                                <span class="vote-count">5</span>
+                                <button class="vote-btn">▼</button>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm">
+                            <h3 class="h4">
+                                <a href="question.html" class="text-decoration-none text-primary fw-bold">How to build a
+                                    moon park?</a>
+                            </h3>
+                            <p class="text-secondary">
+                                Guys, i have trouble with a moon park. Can't find the black-jack and the rest of the
+                                park...
+                                I've been searching for modules in Python that could help.
+                            </p>
+                            <div class="d-flex flex-wrap gap-3 small mt-3 align-items-center">
+                                <a href="question.html" class="fw-bold">answers (3)</a>
+                                <span>Tags: <a href="#" class="text-decoration-none text-info me-1">moon</a> <a href="#"
+                                        class="text-decoration-none text-info">bender</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-auto text-center" style="min-width: 100px;">
+                            <div class="avatar-placeholder mb-2">Avatar</div>
+                            <div class="vote-widget">
+                                <button class="vote-btn">▲</button>
+                                <span class="vote-count">12</span>
+                                <button class="vote-btn">▼</button>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm">
+                            <h3 class="h4">
+                                <a href="question.html" class="text-decoration-none text-primary fw-bold">Best IDE for
+                                    Django development?</a>
+                            </h3>
+                            <p class="text-secondary">
+                                I am starting my new project and want to choose the best environment. What do you use?
+                            </p>
+                            <div class="d-flex flex-wrap gap-3 small mt-3 align-items-center">
+                                <a href="question.html" class="fw-bold">answers (10)</a>
+                                <span>Tags: <a href="#" class="text-decoration-none text-info me-1">django</a> <a
+                                        href="#" class="text-decoration-none text-info">python</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="mt-5">
+                    <ul class="pagination">
+                        <li class="page-item disabled"><span class="page-link">Previous</span></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <aside class="col-lg-3 ps-lg-5">
+                <div class="sidebar-section mb-5">
+                    <h3>Popular Tags</h3>
+                    <div class="d-flex flex-wrap gap-2 fw-bold">
+                        <span class="tag-perl">perl</span>
+                        <span class="tag-python">python</span>
+                        <span class="text-secondary">TechnoPark</span>
+                        <span class="text-danger">MySQL</span>
+                        <span class="tag-django">django</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Best Members</h3>
+                    <ul class="list-unstyled lh-lg">
+                        <li><a href="#" class="text-decoration-none">Mr. Freeman</a></li>
+                        <li><a href="#" class="text-decoration-none text-primary">Dr. House</a></li>
+                        <li><a href="#" class="text-decoration-none">Bender</a></li>
+                        <li><a href="#" class="text-decoration-none">Queen Victoria</a></li>
+                        <li><a href="#" class="text-decoration-none">V. Pupkin</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="py-1 bg-light border-top mt-5">
+        <div class="container text-center text-muted">
+            Footer:)
+        </div>
+    </footer>
+
+</body>
+
+</html>

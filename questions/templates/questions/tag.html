@@ -1,0 +1,12 @@
+{% extends 'questions/layout/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex align-items-baseline mb-4">
+    <h2 class="me-3 fw-bold">Tag: {{ tag }}</h2>
+</div>
+{% for question in questions %}
+{% include 'questions/partials/question.html' %}
+{% endfor %}
+{% include 'questions/partials/pagination.html' %}
+{% endblock %}
