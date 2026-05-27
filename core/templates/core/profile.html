@@ -1,47 +1,20 @@
 {% extends 'core/layout/base.html'%}
+{% load django_bootstrap5 %}
 
 {% block content %}
-                <h2 class="mb-4 fw-bold">Settings: Dr. Pepper</h2>
-                <form>
-                    <div class="row mb-3 align-items-center">
-                        <label for="inputLogin" class="col-sm-3 col-form-label fw-bold">Login</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control border-2 border-dark" id="inputLogin"
-                                value="dr_pepper">
-                        </div>
-                    </div>
+                <h2 class="mb-4 fw-bold">Settings: {{ request.user.username }}</h2>
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
 
-                    <div class="row mb-3 align-items-center">
-                        <label for="inputEmail" class="col-sm-3 col-form-label fw-bold">Email</label>
-                        <div class="col-sm-9">
-                            <input type="email" class="form-control border-2 border-dark" id="inputEmail"
-                                value="dr.pepper@mail.ru">
-                        </div>
-                    </div>
+                    {% bootstrap_form form_user %}
+                    {% if request.user.profile.avatar %}
+                <div class="mb-3">
+                    <img src="{{ request.user.profile.avatar.url }}" alt="Avatar" class="rounded-circle img-thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
+                </div>
+                {% endif %}
 
-                    <div class="row mb-3 align-items-center">
-                        <label for="inputNick" class="col-sm-3 col-form-label fw-bold">NickName</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control border-2 border-dark" id="inputNick"
-                                value="Dr. Pepper">
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <label class="col-sm-3 col-form-label fw-bold">Upload avatar</label>
-                        <div class="col-sm-9">
-                            <div class="avatar-placeholder mb-3" style="width: 120px; height: 120px;">
-                                <img src="static/img/default-avatar.png" alt="avatar" class="img-fluid">
-                            </div>
-                            <input class="form-control border-2 border-dark w-50" type="file" id="formFile">
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-9">
-                            <button type="submit" class="btn btn-dark fw-bold px-4 shadow">Save</button>
-                        </div>
-                    </div>
+                {% bootstrap_form form_profile %}
+                    {% bootstrap_button button_type="submit" content="Save" button_class="btn-success fw-bold px-4" %}
                 </form>
+
 {% endblock %}
