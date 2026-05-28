@@ -1,11 +1,8 @@
 # 2026-VK-EDU-Web-11-Nesterov-G
 ## CrowdHelp
 
-Содержится django проект с view страниц и настроенной маршрутизацией. Для генерации html применена шаблонизация
 
 Для запуска из корневой папки проекта вызвать команду docker-compose up --build
-
-Cоздать миграции командой docker compose exec web python manage.py makemigrations
 
 Выполнить миграции командой docker compose exec web python manage.py migrate
 
