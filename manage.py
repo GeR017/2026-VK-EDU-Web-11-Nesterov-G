@@ -6,6 +6,10 @@ import sys
 
 def main():
     """Run administrative tasks."""
+    # Принудительно устанавливаем кодировку клиента для psycopg2.
+    # Это самый надежный способ избежать UnicodeDecodeError на Windows.
+    os.environ.setdefault('PGCLIENTENCODING', 'UTF-8')
+
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'application.settings')
     try:
         from django.core.management import execute_from_command_line

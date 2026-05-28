@@ -8,6 +8,8 @@
 </div>
 {% for question in questions %}
 {% include 'questions/partials/question.html' %}
+{% empty %}
+    <div class="alert alert-info">Пока нет ни одного вопроса.</div>
 {% endfor %}
 {% include 'questions/partials/pagination.html' %}
 {% endblock %}
