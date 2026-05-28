@@ -1,25 +1,40 @@
-<div class="question-card">
-                    <div class="row g-3">
-                        <div class="col-12 col-sm-auto text-center" style="min-width: 100px;">
-                            <div class="avatar-placeholder mb-2">Avatar</div>
-                            <div class="vote-widget">
-                                <button class="vote-btn">▲</button>
-                                <span class="vote-count">5</span>
-                                <button class="vote-btn">▼</button>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm">
-                            <h3 class="h4">
-                                <a href="{% url 'question' question.id %}" class="text-decoration-none text-primary fw-bold">{{ question.title }}</a>
-                            </h3>
-                            <p class="text-secondary">
-                                {{ question.text }}
-                            </p>
-                            <div class="d-flex flex-wrap gap-3 small mt-3 align-items-center">
-                                <a href="{% url 'question' question.id %}" class="fw-bold">answers (3)</a>
-                                <span>Tags: <a href="#" class="text-decoration-none text-info me-1">moon</a> <a href="#"
-                                        class="text-decoration-none text-info">bender</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="question-card border p-3 mb-3 rounded shadow-sm">
+    <div class="row g-3">
+        <div class="col-12 col-sm-auto text-center" style="min-width: 100px;">
+            <div class="avatar-placeholder mb-2 bg-secondary text-white rounded p-2 small">Avatar</div>
+            <div class="vote-widget">
+                <button class="vote-btn btn btn-sm btn-outline-success">▲</button>
+                <span class="vote-count mx-2 fw-bold">{{question.like_count}}</span>
+                <button class="vote-btn btn btn-sm btn-outline-danger">▼</button>
+            </div>
+        </div>
+        <div class="col-12 col-sm">
+            <h3 class="h4 mb-1">
+                <a href="{% url 'question' question.id %}" class="text-decoration-none text-primary fw-bold">{{ question.title }}</a>
+            </h3>
+
+            <div class="text-muted small mb-2">
+                Опубликовано: <strong>{{ question.creation_date|date:"d.m.Y H:i" }}</strong> | Автор: <span class="text-dark">{{ question.author.username }}</span>
+            </div>
+
+            <p class="text-secondary text-break">
+                {{ question.text }}
+            </p>
+            <div class="d-flex flex-wrap gap-3 small mt-3 align-items-center">
+                <a href="{% url 'question' question.id %}" class="fw-bold text-decoration-none">
+                    Ответы ({{ question.answers_count }})
+                </a>
+
+                <span>Tags:
+                    {% for tag in question.tags.all %}
+                        <a href="{% url 'tag' tag.title %}" class="badge bg-light text-info text-decoration-none border me-1 px-2 py-1">
+                            #{{ tag.title }}
+                        </a>
+                    {% empty %}
+                        <span class="text-muted italic small">нет тегов</span>
+                    {% endfor %}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

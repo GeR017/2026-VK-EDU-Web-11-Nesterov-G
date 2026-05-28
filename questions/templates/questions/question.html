@@ -1,15 +1,16 @@
 {% extends 'questions/layout/base.html' %}
+{% load django_bootstrap5 %}
 {% load static %}
 {%  block content %}
 {% include 'questions/partials/main_question.html' %}
 {% for answer in answers %}
 {% include 'questions/partials/answer.html'%}
 {% endfor %}
-                <form class="mt-5">
-                    <div class="mb-3">
-                        <textarea class="form-control border-2 border-dark" rows="5"
-                            placeholder="Enter your answer here..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-dark px-4 fw-bold">Answer</button>
+                <form method='POST' class="mt-5">
+                     {% csrf_token %}
+                     {% bootstrap_form form %}
+
+                    {% bootstrap_button button_type="submit" content="ASK!" %}
                 </form>
+{% include 'questions/partials/pagination.html' %}
 {% endblock %}
