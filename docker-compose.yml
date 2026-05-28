@@ -13,7 +13,7 @@ services:
       - POSTGRES_LC_COLLATE=C
       - POSTGRES_LC_CTYPE=C
     ports:
-      - "5432:5432"
+      - "5433:5432"
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U nesterov_user -d ask_nesterov_db"]
       interval: 5s
